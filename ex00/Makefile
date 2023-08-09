@@ -6,7 +6,7 @@
 #    By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/09 10:30:11 by jgoldste          #+#    #+#              #
-#    Updated: 2023/08/09 12:07:17 by jgoldste         ###   ########.fr        #
+#    Updated: 2023/08/09 12:42:39 by jgoldste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ clean:
 # Target for fully cleaning the project
 fclean: clean
 	$(RM) $(NAME)
-	@echo $(YELLOW) "\n\tProject 'clean' status: DONE\n" ${END}
+	@echo $(YELLOW) "\n\tProject 'fclean' status: DONE\n" ${END}
 
 # Target for rebuilding the project
 re: fclean all
