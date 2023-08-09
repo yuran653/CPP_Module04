@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:35:08 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/09 12:16:32 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/09 14:45:32 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ Cat& Cat::operator=(const Cat& otherCat) {
 }
 
 void	Cat::makeSound(void) const {
-	std::cout << "Cat make MEW sound" << std::endl;
+	std::cout << "Cat makes MEW sound" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:35:02 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/09 12:17:02 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/09 14:45:34 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ Dog& Dog::operator=(const Dog& otherDog) {
 }
 
 void	Dog::makeSound(void) const {
-	std::cout << "Dog make BARK sound" << std::endl;
+	std::cout << "Dog makes BARK sound" << std::endl;
 }
