@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 16:48:14 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/10 22:19:28 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/11 00:45:36 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 
 int main() {
 	// {
-	// 	Animal a;
-	// 	Animal b(a);
-	// 	const Animal* j = new Dog();
-	// 	const Animal* i = new Cat();
+	// 	AAnimal a;
+	// 	AAnimal b(a);
+	// 	const AAnimal* j = new Dog();
+	// 	const AAnimal* i = new Cat();
 	// 	delete j;
 	// 	delete i;
 	// 	std::cout << std::endl;

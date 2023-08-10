@@ -6,17 +6,17 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:35:06 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/10 20:33:10 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/11 00:44:25 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 #define DOG_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Dog : public Animal, public Brain {
+class Dog : public AAnimal, public Brain {
 	private:
 		Brain* _brain;
 

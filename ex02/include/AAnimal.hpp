@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:31:47 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/10 22:14:55 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/11 00:42:46 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+#define AANIMAL_HPP
 
 #include <iostream>
 #include <string>
 
-class Animal {
+class AAnimal {
 	private:
 		std::string	_type;
 
 	protected:
-		Animal();
-		virtual ~Animal();
-		Animal(Animal& otherAnimal);
+		AAnimal();
+		virtual ~AAnimal();
+		AAnimal(AAnimal& otherAAnimal);
 
-		Animal& operator=(const Animal& otherAnimal);
+		AAnimal& operator=(const AAnimal& otherAAnimal);
 
 		void	setType(std::string type);
 

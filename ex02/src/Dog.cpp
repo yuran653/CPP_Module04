@@ -6,13 +6,13 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:35:02 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/10 20:33:53 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/11 00:45:25 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal(), _brain(new Brain()) {
+Dog::Dog() : AAnimal(), _brain(new Brain()) {
 	setType("Dog");
 	std::cout << "Dog default constructor called" << std::endl;
 }
@@ -22,7 +22,7 @@ Dog::~Dog() {
 	std::cout << "Dog destructor called" << std::endl;
 }
 
-Dog::Dog(Dog& otherDog) : Animal(otherDog), _brain(new Brain()) {
+Dog::Dog(Dog& otherDog) : AAnimal(otherDog), _brain(new Brain()) {
     std::cout << "Dog copy constructor called" << std::endl;
 	*this = otherDog;
 }

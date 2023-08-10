@@ -6,14 +6,14 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 16:39:52 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/10 20:22:53 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/11 00:46:16 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BRAIN_HPP
 #define BRAIN_HPP
 
-#define SIZE 4
+#define SIZE 100
 
 #include <iostream>
 #include <string>

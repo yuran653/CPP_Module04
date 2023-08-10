@@ -6,17 +6,17 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:34:31 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/10 20:33:02 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/11 00:44:08 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 #define CAT_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal, public Brain {
+class Cat : public AAnimal, public Brain {
 	private:
 		Brain* _brain;
 
