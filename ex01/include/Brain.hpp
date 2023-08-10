@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 16:39:52 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/10 17:30:17 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/10 20:22:53 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class Brain {
 		Brain& operator=(const Brain& otherBrain);
 
 		std::string	getIdea(int i);
+		void		copyIdea(int i, std::string str);
 		void		addIdea(int i, std::string str);
 		void		delIdea(int i);
 };

@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:34:31 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/10 17:02:53 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/10 20:33:02 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Cat : public Animal, public Brain {
 		Cat& operator=(const Cat& otherCat);
 
 		void	makeSound(void) const;
+		void	changeType(std::string type);
 };
 
 #endif

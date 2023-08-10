@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 16:48:14 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/10 17:38:45 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/10 20:40:40 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 #include "Cat.hpp"
 
 int main() {
+	{
+		const Animal* j = new Dog();
+		const Animal* i = new Cat();
+		delete j;
+		delete i;
+		std::cout << std::endl;
+	}
+
+
 	Dog* dog = new Dog();
 	Cat* cat = new Cat();
 
@@ -23,15 +32,32 @@ int main() {
 		cat->addIdea(i, "belongs to " + cat->getType());
 	}
 
+	dog->changeType("Puppy");
+	Dog* dog_assign = new Dog();
+	*dog_assign = *dog;
+
+	cat->changeType("Kitty");
+	Cat* cat_copy = new Cat(*cat);
+
 	for (int i = 0; i < SIZE; i++) {
-		if (i % 2 == 0)
+		dog_assign->addIdea(i, ". " + dog_assign->getType() + " says BARK-BARK");;
+		cat_copy->addIdea(i, ". " + cat_copy->getType() + " says MEOW-MEOW");
+	}
+
+	for (int i = 0; i < SIZE; i++) {
+		if (i % 2 == 0) {
 			std::cout << dog->getIdea(i) << std::endl;
-		else
+			std::cout << dog_assign->getIdea(i) << std::endl;
+		} else {
 			std::cout << cat->getIdea(i) << std::endl;
+			std::cout << cat_copy->getIdea(i) << std::endl;
+		}
 	}
 
 	delete dog;
 	delete cat;
+	delete dog_assign;
+	delete cat_copy;
 	
 	return 0;
 }

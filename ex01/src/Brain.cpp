@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 16:40:07 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/10 17:27:46 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/10 20:22:57 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ Brain::~Brain() {
 
 Brain::Brain(Brain& otherBrain) {
 	std::cout << "Brain copy constructor called" << std::endl;
-	*this = otherBrain;
+	for (int i = 0; i < SIZE; i++)
+        _ideas[i] = otherBrain._ideas[i];
 }
 
 Brain& Brain::operator=(const Brain& otherBrain) {
@@ -52,7 +53,11 @@ std::string	Brain::getIdea(int i) {
 	return _ideas[i];
 }
 
-void		Brain::addIdea(int i, std::string str) {
+void	Brain::copyIdea(int i, std::string str) {
+	_ideas[i] = str;
+}
+
+void	Brain::addIdea(int i, std::string str) {
 	_ideas[i] = _ideas[i] + str;
 }
 

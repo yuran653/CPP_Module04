@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:35:06 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/10 17:03:48 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/10 20:33:10 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Dog : public Animal, public Brain {
 		Dog& operator=(const Dog& otherDog);
 
 		void	makeSound(void) const;
+		void	changeType(std::string type);
 };
 
 #endif
