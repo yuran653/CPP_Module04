@@ -6,18 +6,19 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:35:08 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/10 16:38:05 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/10 17:04:07 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal() {
+Cat::Cat() : Animal(), _brain(new Brain()) {
 	setType("Cat");
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
 Cat::~Cat() {
+	delete _brain;
 	std::cout << "Cat destructor called" << std::endl;
 }
 

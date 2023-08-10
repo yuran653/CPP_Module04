@@ -6,18 +6,19 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:35:02 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/10 16:38:08 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/10 17:04:16 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal() {
+Dog::Dog() : Animal(), _brain(new Brain()) {
 	setType("Dog");
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
 Dog::~Dog(){
+	delete _brain;
 	std::cout << "Dog destructor called" << std::endl;
 }
 

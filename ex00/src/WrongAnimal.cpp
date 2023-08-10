@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 15:54:40 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/09 15:55:13 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/10 16:38:15 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ WrongAnimal::WrongAnimal() {
 	_type = "WrongAnimal";
 	std::cout << "WrongAnimal default constructor called" << std::endl;
 }
+
 WrongAnimal::~WrongAnimal() {
 	std::cout << "WrongAnimal destructor called" << std::endl;
 }
@@ -26,7 +27,7 @@ WrongAnimal::WrongAnimal(WrongAnimal& otherWrongAnimal) {
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& otherWrongAnimal) {
-	std::cout << "WrongAnimal copy assignment operator called" << std::endl;
+	std::cout << "WrongAnimal overload assignment operator called" << std::endl;
 	if (this == &otherWrongAnimal)
 		return *this;
 	_type = otherWrongAnimal._type;
