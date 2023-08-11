@@ -6,12 +6,12 @@
 #    By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/11 00:51:45 by jgoldste          #+#    #+#              #
-#    Updated: 2023/08/11 00:52:02 by jgoldste         ###   ########.fr        #
+#    Updated: 2023/08/11 16:47:47 by jgoldste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Variables
-NAME		:= animal
+NAME		:= materia
 
 SRCDIR		:= src
 OBJDIR		:= object
