@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:56:50 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/12 01:11:46 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/12 17:06:36 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,22 @@
 Cure::Cure() : AMateria("cure") {
 }
 
+Cure::Cure(Cure& other) : AMateria("cure") {
+	*this = other;
+}
+
 Cure::~Cure() {
 }
 
+Cure& Cure::operator=(const Cure& other) {
+	if (this == &other)
+		return *this;
+	setType(other._type);
+	return *this;
+}
+
 AMateria*	Cure::clone() const {
-	AMateria* cure = &Cure();
+	AMateria* cure = new Cure();
 	return cure;
 }
 

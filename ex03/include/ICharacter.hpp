@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:56:52 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/11 23:08:19 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/12 17:00:10 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,9 @@
 
 #include "AMateria.hpp"
 
+class AMateria;
+
 class ICharacter {
-	protected:
-		ICharacter(const std::string& name);
-
-		const std::string	_name;
-
 	public:
 		virtual ~ICharacter() {}
 
@@ -31,3 +28,5 @@ class ICharacter {
 };
 
 #endif
+
+

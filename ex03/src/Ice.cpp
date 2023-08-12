@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:56:45 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/12 01:11:28 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/12 17:06:26 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 Ice::Ice() : AMateria("ice") {
 }
 
-// Ice::Ice(Ice& other) {
-// 	*this = other;
-// }
+Ice::Ice(Ice& other) : AMateria("ice") {
+	*this = other;
+}
 
 Ice::~Ice() {
 }
 
-// Ice& Ice::operator=(const Ice& other) {
-// 	if (this == &other)
-// 		return *this;
-// 	setType(other._type);
-// 	return *this;
-// }
+Ice& Ice::operator=(const Ice& other) {
+	if (this == &other)
+		return *this;
+	setType(other._type);
+	return *this;
+}
 
 AMateria*	Ice::clone() const {
-	AMateria* ice = &Ice();
+	AMateria* ice = new Ice();
 	return ice;
 }
 

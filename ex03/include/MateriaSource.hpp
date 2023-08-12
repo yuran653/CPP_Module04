@@ -6,18 +6,32 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:57:10 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/11 18:48:53 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/12 16:40:11 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATERIASOURCE_HPP
 #define MATERIASOURCE_HPP
 
-class IMateriaSource {
+#define SOURCE_SLOTS 4
+
+#include "IMateriaSource.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+
+class MateriaSource : public IMateriaSource {
+	private:
+		AMateria* _source_slots[SOURCE_SLOTS];
+
 	public:
-		virtual ~IMateriaSource() {}
-		virtual void learnMateria(AMateria*) = 0;
-		virtual AMateria* createMateria(std::string const & type) = 0;
+		MateriaSource();
+		MateriaSource(MateriaSource& other);
+		~MateriaSource();
+
+		MateriaSource& operator=(const MateriaSource& other);
+
+		void		learnMateria(AMateria* type);
+		AMateria*	createMateria(const std::string& type);
 };
 
 #endif

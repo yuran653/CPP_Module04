@@ -6,30 +6,60 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:57:02 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/12 01:10:25 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/12 17:24:21 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(const std::string name) : ICharacter(name) {
+Character::Character() : _name("") {
+	for (int i = 0; i < INVENTORY_SLOTS; i++)
+		_inventory_slots[i] = NULL;
+}
+
+Character::Character(const std::string name) : _name(name) {
+	for (int i = 0; i < INVENTORY_SLOTS; i++)
+		_inventory_slots[i] = NULL;
+}
+
+Character::Character(Character& other) {
+	*this = other;
 }
 
 Character::~Character() {
+}
+
+Character& Character::operator=(const Character& other) {
+	if (this == &other)
+		return *this;
+	setName(other._name);
+	for (int i = 0; i < INVENTORY_SLOTS; i++)
+		_inventory_slots[i] = other._inventory_slots[i];
+	return *this;
+}
+
+void	Character::setName(const std::string& name) {
+	const_cast<std::string&>(_name) = name;
 }
 
 const std::string&	Character::getName() const {
 	return _name;
 }
 
-void				Character::equip(AMateria* m) {
-
+void	Character::equip(AMateria* m) {
+	for (int i = 0; i < INVENTORY_SLOTS; i++)
+		if (_inventory_slots[i] == NULL) {
+			_inventory_slots[i] = m;
+			break;
+		}
 }
 
-void				Character::unequip(int idx) {
-
+void	Character::unequip(int idx) {
+	if (idx >= 0 && idx <= 3)
+		_inventory_slots[idx] = NULL;
 }
 
-void				Character::use(int idx, ICharacter& target) {
-
+void	Character::use(int idx, ICharacter& target) {
+	if (idx >= 0 && idx <=3 && _inventory_slots[idx])
+		_inventory_slots[idx]->use(target);
 }
