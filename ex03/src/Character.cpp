@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:57:02 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/12 21:13:11 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/13 00:49:54 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ Character::Character(const std::string name) : _name(name) {
 Character::Character(Character& other) : _name(other._name) {
 	// *this = other;
 	for (int i = 0; i < INVENTORY_SLOTS; i++) {
+		if (_inventory_slots[i])
+			std::cout << "Copy: _inventory_slots[" << i << "]: ["
+				<< &_inventory_slots[i] << "] value [" << _inventory_slots[i]->getType()
+				<< "]" << std::endl;
+		delete _inventory_slots[i];
 		if (other._inventory_slots[i])
 			_inventory_slots[i] = other._inventory_slots[i]->clone();
 		else
@@ -34,6 +39,10 @@ Character::Character(Character& other) : _name(other._name) {
 
 Character::~Character() {
 	for (int i = 0; i < INVENTORY_SLOTS; i++) {
+		if (_inventory_slots[i])
+			std::cout << "Destructor: _inventory_slots[" << i << "]: ["
+				<< &_inventory_slots[i] << "] value [" << _inventory_slots[i]->getType()
+				<< "]" << std::endl;
 		delete _inventory_slots[i];
 		_inventory_slots[i] = NULL;
 	}
@@ -46,6 +55,10 @@ Character& Character::operator=(const Character& other) {
 	// for (int i = 0; i < INVENTORY_SLOTS; i++)
 	// 	_inventory_slots[i] = other._inventory_slots[i];
 	for (int i = 0; i < INVENTORY_SLOTS; i++) {
+		if (_inventory_slots[i])
+			std::cout << "Operator: _inventory_slots[" << i << "]: ["
+				<< &_inventory_slots[i] << "] value [" << _inventory_slots[i]->getType()
+				<< "]" << std::endl;
 		delete _inventory_slots[i];
 		if (other._inventory_slots[i])
 			_inventory_slots[i] = other._inventory_slots[i]->clone();
@@ -72,8 +85,10 @@ void	Character::equip(AMateria* m) {
 }
 
 void	Character::unequip(int idx) {
-	if (idx >= 0 && idx <= 3)
+	if (idx >= 0 && idx <= 3) {
+		delete _inventory_slots[idx]; // Manage later
 		_inventory_slots[idx] = NULL;
+	}
 }
 
 void	Character::use(int idx, ICharacter& target) {
