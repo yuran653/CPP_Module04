@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:57:02 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/12 20:12:31 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/12 21:13:11 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,36 @@ Character::Character(const std::string name) : _name(name) {
 		_inventory_slots[i] = NULL;
 }
 
-Character::Character(Character& other) {
-	*this = other;
+Character::Character(Character& other) : _name(other._name) {
+	// *this = other;
+	for (int i = 0; i < INVENTORY_SLOTS; i++) {
+		if (other._inventory_slots[i])
+			_inventory_slots[i] = other._inventory_slots[i]->clone();
+		else
+			_inventory_slots[i] = nullptr;
+	}
 }
 
 Character::~Character() {
+	for (int i = 0; i < INVENTORY_SLOTS; i++) {
+		delete _inventory_slots[i];
+		_inventory_slots[i] = NULL;
+	}
 }
 
 Character& Character::operator=(const Character& other) {
 	if (this == &other)
 		return *this;
 	setName(other._name);
-	for (int i = 0; i < INVENTORY_SLOTS; i++)
-		_inventory_slots[i] = other._inventory_slots[i];
+	// for (int i = 0; i < INVENTORY_SLOTS; i++)
+	// 	_inventory_slots[i] = other._inventory_slots[i];
+	for (int i = 0; i < INVENTORY_SLOTS; i++) {
+		delete _inventory_slots[i];
+		if (other._inventory_slots[i])
+			_inventory_slots[i] = other._inventory_slots[i]->clone();
+		else
+			_inventory_slots[i] = nullptr;
+	}
 	return *this;
 }
 

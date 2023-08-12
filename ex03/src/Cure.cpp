@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:56:50 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/12 19:07:02 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/12 20:56:46 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Cure::Cure() : AMateria("cure") {
 }
 
-Cure::Cure(Cure& other) : AMateria("cure'") {
+Cure::Cure(Cure& other) : AMateria("cure") {
 	*this = other;
 }
 
@@ -34,6 +34,6 @@ AMateria*	Cure::clone() const {
 	return cure;
 }
 
-void		Cure::use(ICharacter& target) {
+void	Cure::use(ICharacter& target) {
 	std::cout << "* heals " << target.getName() << "\'s wounds *" << std::endl;
 }
