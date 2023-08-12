@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:56:52 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/12 17:00:10 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/12 20:17:05 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,3 @@ class ICharacter {
 };
 
 #endif
-
-

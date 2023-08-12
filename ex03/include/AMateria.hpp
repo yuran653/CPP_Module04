@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:56:36 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/12 17:00:25 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/12 18:58:51 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class AMateria {
 	protected:
 		AMateria();
 		AMateria(AMateria& other);
-		virtual ~AMateria();
 
 		AMateria& operator=(const AMateria& other);
 
@@ -33,6 +32,7 @@ class AMateria {
 
 	public:
 		AMateria(const std::string& type);
+		virtual ~AMateria();
 
 		const std::string&	getType() const;
 		virtual AMateria*	clone() const = 0;

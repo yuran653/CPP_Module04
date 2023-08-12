@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 00:53:24 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/12 17:22:11 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/12 20:14:13 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,3 @@ int	main() {
 
 	return 0;
 }
-
-// Output:
-// $> clang++ -W -Wall -Werror *.cpp
-// $> ./a.out | cat -e
-// * shoots an ice bolt at bob *$
-// * heals bob's wounds *$
