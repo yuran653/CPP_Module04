@@ -6,7 +6,7 @@
 #    By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/11 00:51:45 by jgoldste          #+#    #+#              #
-#    Updated: 2023/08/11 16:47:47 by jgoldste         ###   ########.fr        #
+#    Updated: 2023/08/13 16:01:46 by jgoldste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ HDR			:= $(wildcard $(HDRDIR)/*.hpp)
 INC			:= -I./include
 
 CXX			:= g++
-CXXFLAGS	:= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS	:= -Wall -Wextra -Werror -std=c++98 -g
 
 SRCS		:= $(wildcard $(SRCDIR)/*.cpp)
 OBJS		:= $(patsubst %.cpp,$(OBJDIR)/%.o,$(SRCS))

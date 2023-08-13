@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:56:50 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/13 00:59:10 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/13 19:15:24 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Cure::Cure(Cure& other) : AMateria("cure") {
 }
 
 Cure::~Cure() {
-	std::cout << "Cure destructor calls" << std::endl;
 }
 
 Cure& Cure::operator=(const Cure& other) {
