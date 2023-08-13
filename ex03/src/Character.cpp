@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:57:02 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/13 20:32:33 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/14 02:16:50 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,6 @@ Character::Character(const std::string name) : _name(name) {
 
 Character::Character(Character& other) : _name(other._name) {
 	*this = other;
-	// for (int i = 0; i < INVENTORY_SLOTS; i++) {
-	// 	delete _inventory_slots[i];
-	// 	if (other._inventory_slots[i])
-	// 		_inventory_slots[i] = other._inventory_slots[i]->clone();
-	// 	else
-	// 		_inventory_slots[i] = nullptr;
-	// }
 }
 
 Character::~Character() {
@@ -45,7 +38,6 @@ Character& Character::operator=(const Character& other) {
 		return *this;
 	setName(other._name);
 	for (int i = 0; i < INVENTORY_SLOTS; i++) {
-		delete _inventory_slots[i];
 		if (other._inventory_slots[i])
 			_inventory_slots[i] = other._inventory_slots[i]->clone();
 		else

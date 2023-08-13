@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:57:10 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/13 00:50:25 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/14 02:09:54 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define MATERIASOURCE_HPP
 
 #define SOURCE_SLOTS 4
-#define FLOOR_SIZE 100
 
 #include "IMateriaSource.hpp"
 #include "Cure.hpp"
@@ -23,7 +22,6 @@
 class MateriaSource : public IMateriaSource {
 	private:
 		AMateria*	_source_slots[SOURCE_SLOTS];
-		// AMateria*	_floor[FLOOR_SIZE];
 
 	public:
 		MateriaSource();
@@ -34,8 +32,6 @@ class MateriaSource : public IMateriaSource {
 
 		void		learnMateria(AMateria* type);
 		AMateria*	createMateria(const std::string& type);
-		// void		dropMateria(AMateria* type);
-		// void		deleteMateria(AMateria* array, size_t size);
 };
 
 #endif
