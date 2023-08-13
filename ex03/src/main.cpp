@@ -6,14 +6,14 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 00:53:24 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/14 02:12:46 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/14 02:40:39 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 #include "Character.hpp"
 
-#define SIZE 5
+#define SIZE 10
 
 int	main() {
 	IMateriaSource* src1 = new MateriaSource();
@@ -39,21 +39,16 @@ int	main() {
 		src2->learnMateria(new Ice());
 		src2->learnMateria(new Cure());
 	}
-
 	MateriaSource* src3 = new MateriaSource();
 	*src3 = *src2;
 	MateriaSource* src4 = new MateriaSource(*src3);
 
-	ICharacter* me2 = new Character("me2");
-	AMateria* tmp2;
-
+	Character* me2 = new Character("me2");
+	
 	for (int i = 0; i < SIZE; i++) {
-		tmp2 = src4->createMateria("ice");
-		me2->equip(tmp2);
-		tmp2 = src4->createMateria("fire");
-		me2->equip(tmp2);
-		tmp2 = src4->createMateria("cure");
-		me2->equip(tmp2);
+		me2->equip(src4->createMateria("ice"));
+		me2->equip(src4->createMateria("fire"));
+		me2->equip(src4->createMateria("cure"));
 	}
 
 	Character* bob1 = new Character("bob");
@@ -71,7 +66,7 @@ int	main() {
 	me1->use(4, *bob1);
 	me2->use(4, *bob1);
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < SIZE; i++)
 		me1->unequip(i);
 
 	delete bob1;
