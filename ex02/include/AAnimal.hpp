@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:31:47 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/11 00:42:46 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/14 22:59:12 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class AAnimal {
 
 	public:
 		std::string		getType(void) const;
-		virtual void	makeSound(void) const;
+		virtual void	makeSound(void) const = 0;
 };
 
 #endif
