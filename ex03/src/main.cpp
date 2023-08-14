@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 00:53:24 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/14 20:27:46 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/15 01:38:05 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	main() {
 	me1->use(4, *bob1);
 	me2->use(4, *bob1);
 
-	for (int i = 0; i < SIZE + 1; i++)
+	for (int i = 0; i < 1500 + 1; i++)
 		me1->unequip(i);
 
 	delete bob1;
