@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Floor.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/11 12:56:52 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/14 17:58:12 by jgoldste         ###   ########.fr       */
+/*   Created: 2023/08/14 15:53:16 by jgoldste          #+#    #+#             */
+/*   Updated: 2023/08/14 20:30:00 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-#define ICHARACTER_HPP
+#ifndef FLOOR_HPP
+#define FLOOR_HPP
+
+#define FLOOR_SIZE 1000
 
 #include "AMateria.hpp"
-#include "Floor.hpp"
 
 class AMateria;
 
-class Floor;
+class Floor {
+	private:
+		Floor();
+		~Floor();
 
-class ICharacter {
+		AMateria*		_floor[FLOOR_SIZE];
+		size_t	_size;
+
 	public:
-		virtual ~ICharacter() {}
+		static Floor&	getInstance();
+		void			dropMateria(AMateria* type);
 
-		virtual const std::string&	getName() const = 0;
-		virtual void				equip(AMateria* m) = 0;
-		virtual void				unequip(int idx) = 0;
-		virtual void				use(int idx, ICharacter& target) = 0;
 };
 
 #endif

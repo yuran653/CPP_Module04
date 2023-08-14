@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:57:02 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/14 02:16:50 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/14 18:07:51 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,9 @@ void	Character::equip(AMateria* m) {
 }
 
 void	Character::unequip(int idx) {
-	if (idx >= 0 && idx <= 3) {
-		delete _inventory_slots[idx]; // Manage later
+	if (idx >= 0 && idx <= 3 && _inventory_slots[idx] != NULL) {
+		// delete _inventory_slots[idx]; // Manage later
+		Floor::getInstance().dropMateria(_inventory_slots[idx]);
 		_inventory_slots[idx] = NULL;
 	}
 }

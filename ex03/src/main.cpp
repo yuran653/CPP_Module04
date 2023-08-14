@@ -6,14 +6,14 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 00:53:24 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/14 02:40:39 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/14 20:27:46 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 #include "Character.hpp"
 
-#define SIZE 10
+#define SIZE 100
 
 int	main() {
 	IMateriaSource* src1 = new MateriaSource();
@@ -66,7 +66,7 @@ int	main() {
 	me1->use(4, *bob1);
 	me2->use(4, *bob1);
 
-	for (int i = 0; i < SIZE; i++)
+	for (int i = 0; i < SIZE + 1; i++)
 		me1->unequip(i);
 
 	delete bob1;
