@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:53:16 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/14 20:30:00 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/14 23:01:05 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Floor {
 		Floor();
 		~Floor();
 
-		AMateria*		_floor[FLOOR_SIZE];
-		size_t	_size;
+		AMateria*	_floor[FLOOR_SIZE];
+		size_t		_size;
 
 	public:
 		static Floor&	getInstance();
