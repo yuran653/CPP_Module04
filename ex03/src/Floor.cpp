@@ -6,7 +6,7 @@
 /*   By: jgoldste <jgoldste@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:54:32 by jgoldste          #+#    #+#             */
-/*   Updated: 2023/08/15 01:37:30 by jgoldste         ###   ########.fr       */
+/*   Updated: 2023/08/15 16:36:57 by jgoldste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Floor& Floor::getInstance() {
 }
 
 void	Floor::dropMateria(AMateria* type) {
-	if (_size == 1000) {
+	if (_size == FLOOR_SIZE) {
 		for (size_t i = 0; i < _size; i++)
 			delete _floor[i];
 		_size = 0;
